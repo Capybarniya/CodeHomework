@@ -14,11 +14,14 @@ for e in str_in:
         c_soglas += 1
         letters_freq[e] = letters_freq[e] + 1
         
-    
+freq_out = sorted(list(letters_freq.items()), key = lambda x: x[1])[-3:][::-1]     
 print(f"""Количество согласных: {c_soglas}
 Количество гласных: {c_glas}
 Количество пробелов: {str_in.count(' ')}
-Самые частые символы: {sorted(list(letters_freq.items()), key= lambda x: x[1])[-3:][::-1]}
+Самые частые символы: 
+{freq_out[0][0]} - {freq_out[0][1]}
+{freq_out[1][0]} - {freq_out[1][1]}
+{freq_out[2][0]} - {freq_out[2][1]}
 Количество слов: {len(str_in.split())}""")
 
 print()
